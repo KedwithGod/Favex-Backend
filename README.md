@@ -1,61 +1,115 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+Favex Backend App (SQLite)
+📖 Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This guide walks you through setting up and running the Laravel application with SQLite. It covers environment setup, database configuration, migrations, seeders, API documentation, and debugging tools.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Tip: Follow each step carefully to ensure your application works correctly in development.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+⚙️ Prerequisites
 
-## Learning Laravel
+Ensure your system has the following installed:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+PHP ≥ 8.0
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Composer (for dependency management)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Note: SQLite is lightweight and does not require a separate database server, making it perfect for local development.
 
-## Laravel Sponsors
+🛠️ Setup Steps
+1. Clone the Repository
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Clone your project repository and navigate into the folder.
 
-### Premium Partners
+Tip: Use a descriptive folder name to avoid confusion with other projects.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2. Install Dependencies
 
-## Contributing
+Install all required PHP packages using Composer. This ensures your application has everything it needs to run.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Note: If you encounter version conflicts, check your PHP and Composer versions.
 
-## Code of Conduct
+3. Configure the Environment
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Create the .env configuration file from the example:
 
-## Security Vulnerabilities
+Set the database connection to sqlite.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Specify the full path to your SQLite database file.
 
-## License
+Ensure the SQLite database file exists.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Warning: If the database file does not exist, the application will fail to run migrations.
+
+4. Generate the Application Key
+
+Laravel requires an application key for encryption and session security.
+
+Tip: Always generate a new key when setting up a fresh environment.
+
+5. Run Database Migrations
+
+Migrations create all required database tables.
+
+Tip: If you make changes to your models or migrations, run migrate:fresh to reset the database.
+Warning: This will delete all existing data in the database.
+
+6. Seed the Database (Optional)
+
+Populate the database with initial or sample data using seeders.
+
+Note: Seeders are useful for testing and development, but may not be needed in production.
+
+7. Start the Application
+
+Run the Laravel development server. By default, it will be available at http://127.0.0.1:8000
+.
+
+Tip: Keep the server running in a terminal window for continuous development.
+
+📑 API Documentation
+
+This project uses rakutentech/laravel-request-docs
+ to generate API documentation.
+
+Access documentation at http://localhost:8000/request-docs
+
+Automatically updates based on your API routes and request definitions
+
+Ideal for developers to explore endpoints, request parameters, and response structures
+
+Tip: Keep your routes and request validation up to date for accurate documentation.
+
+🐞 Debugging
+
+Debugging is handled via barryvdh/laravel-debugbar
+:
+
+View executed queries, request data, and performance metrics
+
+Track timeout errors, exceptions, and model usage
+
+Debug toolbar appears in the browser when APP_DEBUG=true
+
+Note: Disable debugbar in production for security and performance reasons.
+
+🔧 Additional Notes
+
+Clearing Cache: Refresh configurations, routes, and views when needed.
+
+Environment Settings: For development, ensure APP_ENV=local and APP_DEBUG=true.
+
+Optional Seeders: Seeders can provide useful sample data during development.
+
+✅ Summary
+
+Following this guide ensures your Laravel application is:
+
+Fully operational with SQLite
+
+Equipped with auto-generated API documentation
+
+Integrated with a robust debugging toolbar
+
+Ready for development, testing, and exploration
