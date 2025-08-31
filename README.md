@@ -68,6 +68,9 @@ Run the Laravel development server. By default, it will be available at http://1
 
 Tip: Keep the server running in a terminal window for continuous development.
 
+Add the staging base URL for fetching the crypto and giftcard list to the .env
+e.g STAGING_URL = "https://test.com"
+
 📑 API Documentation
 
 This project uses rakutentech/laravel-request-docs

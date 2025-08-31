@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\External\CryptoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\External\GiftCardController;
@@ -34,6 +35,7 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('users', UserController::class)->only(['index','show','update','destroy']);
         // routes/api.php
     Route::get('/giftcards', [GiftCardController::class, 'getAllGiftcards']);
+    Route::get('/cryptodata', [CryptoController::class, 'getAllCryptoData']);
 
     });
 });
